@@ -25,7 +25,8 @@ BiliDrive Easy Download is a Free software tool to Batch download bilibili files
    在命令行中，进入到项目目录，执行python generate.py
 
 ## 目录结构描述
-'''
+、、、
+.
 ├── Readme.md                   // 说明文件
 ├── generate.py                 // 执行文件
 ├── config.ini                  // 配置文件
@@ -34,7 +35,7 @@ BiliDrive Easy Download is a Free software tool to Batch download bilibili files
     ├── ffmpeg_utils.py         // 应用ffmpeg做音视频处理的工具类
     ├── moviepy_utils.py        // 应用moviepy做音视频处理的工具类
     └── myutils.py              // 文件处理类
-'''
+、、、
 
 ## V1.0.0 版本内容更新
 1. 实现手机缓存的视频文件，导入电脑后，批量转换为mp4格式文件。
