@@ -14,11 +14,18 @@ BiliDrive Easy Download is a Free software tool to Batch download bilibili files
 ## 使用方法
 
 1. 在Android手机的哔哩哔哩App中，把想要下载的视频，缓存在手机中。
+<center><img src="https://github.com/davidhefan/BiliDrive-Easy-Download/blob/main/doc/images/Screenshot_20221020_091427.jpg" width="30%"></center>
+<center><img src="https://github.com/davidhefan/BiliDrive-Easy-Download/blob/main/doc/images/Screenshot_20221020_091508.jpg" width="30%"></center>
+<!--
 ![缓存视频1](https://github.com/davidhefan/BiliDrive-Easy-Download/blob/main/doc/images/Screenshot_20221020_091427.jpg#pic_center=200x)
 ![缓存视频2](https://github.com/davidhefan/BiliDrive-Easy-Download/blob/main/doc/images/Screenshot_20221020_091508.jpg#pic_center=200x)
+-->
 
 2. 手机连接电脑，把缓存文件拷贝到电脑中。
+<center><img src="https://github.com/davidhefan/BiliDrive-Easy-Download/blob/main/doc/images/Image%2051.png" width="60%"></center>
+<!--
 ![拷贝视频1](https://github.com/davidhefan/BiliDrive-Easy-Download/blob/main/doc/images/Image%2051.png#pic_center=600x)
+-->
 
 3. 修改config.ini配置文件：
    src_bili_path =  # 原始文件目录，即上一步骤拷贝到电脑中的目录
@@ -26,7 +33,10 @@ BiliDrive Easy Download is a Free software tool to Batch download bilibili files
 
 4. 执行generate.py。
    在命令行中，进入到项目目录，执行python generate.py
+<center><img src="https://github.com/davidhefan/BiliDrive-Easy-Download/blob/main/doc/images/Image%2081.png" width="60%"></center>
+<!--
 ![执行命令1](https://github.com/davidhefan/BiliDrive-Easy-Download/blob/main/doc/images/Image%2081.png#pic_center=600x)
+-->
 
 ## 目录结构描述
 ```
