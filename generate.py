@@ -52,21 +52,26 @@ for idx, file_path_t in enumerate(file_paths):
         json_content = str(json_content.decode("utf-8").replace('\'', '_'))
         print(json_content)
         j = json.loads(json_content)
-        title = j['page_data']['download_subtitle'].replace('__', '_').replace('❤', '').replace('͡', '')\
+        title = j.get('title').replace('__', '_').replace('❤', '').replace('͡', '')\
             .replace('ʖ', '').replace('°', '').replace('͜', '')\
             .replace('|', '').replace('(', '').replace(')', '').replace('\\', '')\
             .replace('/', '').replace('"', '').replace('?', '').replace('*', '')\
-            .replace('，', '').replace('~', '').replace('>', '').replace('<', '').replace(' ', '_')
-        # part = j['part'].replace('__', '_').replace('❤', '').replace('͡', '')\
-        #     .replace('ʖ', '').replace('°', '').replace('͜', '')\
-        #     .replace('|', '').replace('(', '').replace(')', '').replace('\\', '')\
-        #     .replace('/', '').replace('"', '').replace('?', '').replace('*', '')\
-        #     .replace('，', '').replace('~', '').replace('>', '').replace('<', '')
+            .replace('，', '').replace('~', '').replace('>', '').replace('<', '')\
+            .replace('！', '').replace('!', '').replace('？', '').replace(' ', '_')
+        if j.get('page_data') and j.get('page_data').get('part'):
+            part = j.get('page_data').get('part').replace('__', '_').replace('❤', '').replace('͡', '')\
+                .replace('ʖ', '').replace('°', '').replace('͜', '')\
+                .replace('|', '').replace('(', '').replace(')', '').replace('\\', '')\
+                .replace('/', '').replace('"', '').replace('?', '').replace('*', '')\
+                .replace('，', '').replace('~', '').replace('>', '').replace('<', '')\
+                .replace('！', '').replace('!', '').replace('？', '').replace(' ', '_')
+        else:
+            part = ''
 
-        # if title == part:
-        target_name = title + '_' + file_path_contents[-3] + '.mp4'
-        # else:
-        #     target_name = title + '_' + part + file_path_contents[-3] + '.mp4'
+        if title == part:
+            target_name = title + '_' + file_path_contents[-3] + '.mp4'
+        else:
+            target_name = title + '_' + part + file_path_contents[-3] + '.mp4'
         print(target_name)
         target_path = det_bili_path + os.path.sep + target_name
 
