@@ -71,7 +71,7 @@ for idx, file_path_t in enumerate(file_paths):
         if title == part:
             target_name = title + '_' + file_path_contents[-3] + '.mp4'
         else:
-            target_name = title + '_' + part + file_path_contents[-3] + '.mp4'
+            target_name = title + '_' + part + '_' + file_path_contents[-3] + '.mp4'
         print(target_name)
         target_path = det_bili_path + os.path.sep + target_name
 
