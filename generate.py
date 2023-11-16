@@ -38,19 +38,23 @@ for idx, file_path_t in enumerate(file_paths):
         print('json_name: ', json_name)
 
         if not os.path.exists(target_audio_path):
-            shutil.copyfile(src_audio_path, target_audio_path)
+            if os.path.exists(src_audio_path):
+                shutil.copyfile(src_audio_path, target_audio_path)
         if not os.path.exists(target_video_path):
             shutil.copyfile(src_video_path, target_video_path)
 
         if not os.path.exists(target_video_audio_path):
-            # moviepy_utils.merge(target_video_path, target_audio_path, target_video_audio_path)
-            ffmpeg_utils.merge(target_video_path, target_audio_path, target_video_audio_path)
+            if os.path.exists(src_audio_path) and os.path.exists(target_audio_path):
+                # moviepy_utils.merge(target_video_path, target_audio_path, target_video_audio_path)
+                ffmpeg_utils.merge(target_video_path, target_audio_path, target_video_audio_path)
+            else:
+                target_video_audio_path = target_video_path
 
         f = open(json_name, 'rb')
         json_content = f.read()
         f.close()
         json_content = str(json_content.decode("utf-8").replace('\'', '_'))
-        print(json_content)
+        # print(json_content)
         j = json.loads(json_content)
         title = j.get('title').replace('__', '_').replace('❤', '').replace('͡', '')\
             .replace('ʖ', '').replace('°', '').replace('͜', '')\
