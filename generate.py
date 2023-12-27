@@ -76,6 +76,7 @@ for idx, file_path_t in enumerate(file_paths):
             target_name = title + '_' + file_path_contents[-3] + '.mp4'
         else:
             target_name = title + '_' + part + '_' + file_path_contents[-3] + '.mp4'
+        target_name = target_name.replace(':', '_')
         print(target_name)
         target_path = det_bili_path + os.path.sep + target_name
 
